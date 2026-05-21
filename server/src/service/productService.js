@@ -50,7 +50,7 @@ class productService {
       const updateProduct = await ProductModel.findByIdAndUpdate(
         id,
         productData,
-        { new: true },
+        { returnDocument: 'after' },
       );
       if (!updateProduct) return { success: false, error: "Product not found" }
       return { success: true, data: updateProduct };

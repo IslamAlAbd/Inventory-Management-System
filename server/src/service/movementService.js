@@ -66,7 +66,7 @@ class MovementsService {
       const updateMov = await MovementsModel.findByIdAndUpdate(
         id,
         movementData,
-        { new: true },
+        { returnDocument: 'after' },
       );
       return { success: true, data: updateMov };
     } catch (error) {
