@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Inventory Managment System</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="movements.html">Movements</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Dashboard</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="page-header">
+        <div class="page-header-title">
+          <h1>Movements</h1>
+        </div>
+        <button
+          type="button"
+          class="btn btn-primary btn-add"
+          data-bs-toggle="modal"
+          data-bs-target="#new-movement"
+        >
+          + New Movement
+        </button>
+      </div>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="new-movement"
+        tabindex="-1"
+        aria-labelledby="newMovementsLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="newMovementsLabel">
+                New Movements
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div class="modal-body">
+              <form id="movement-form">
+                <div class="mb-3">
+                  <select class="form-select" id="productSelect">
+                    <option value="">Select a product</option>
+                    <!-- options will be added by JS dynamically -->
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <select class="form-select" id="movementType">
+                    <option value="IN">IN</option>
+                    <option value="OUT">OUT</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="productquantity" class="form-label"
+                    >Product Quantity</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="productquantity"
+                    placeholder="quantity"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="productminquantity" class="form-label"
+                    >Note</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="movementNote"
+                    placeholder="add your note..."
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary" id="submit-btn">
+                Add Movement
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table-section">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Product</th>
+              <th scope="col">Type</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Note</th>
+              <th scope="col">Date</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="movements-table-body"></tbody>
+        </table>
+      </div>
+    </main>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/movements.js"></script>
+  </body>
+</html>

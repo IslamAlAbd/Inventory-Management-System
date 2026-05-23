@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Inventory Managment System</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <a class="nav-link" href="products.html">Products</a>
+            <a class="nav-link" href="movements.html">Movements</a>
+            <a class="nav-link active" href="index.html">Dashboard</a>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="page-header" style="margin-bottom: 24px;">
+        <div class="page-header-title">
+          <h1>Dashboard</h1>
+        </div>
+      </div>
+      <div class="d-flex gap-3">
+        <div class="card">
+          <div class="card-body">
+            <h6 class="card-subtitle">Total Products</h6>
+            <h2 id="total-products">-</h2>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h6 class="card-subtitle">Low Stock Items</h6>
+            <h2 id="low-stock">-</h2>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h6 class="card-subtitle">Total Movements</h6>
+            <h2 id="total-movements">-</h2>
+          </div>
+        </div>
+      </div>
+      <h3 style="color: #e2e8f0; margin: 24px 0 16px 0; font-weight: 500;">Products</h3>
+      <div class="table-section">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Product</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody id="products-table-body"></tbody>
+        </table>
+      </div>
+    </main>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/dashboard.js"></script>
+  </body>
+</html>

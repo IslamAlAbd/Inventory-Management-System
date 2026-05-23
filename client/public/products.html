@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Inventory Managment System</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="movements.html">Movements</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Dashboard</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="page-header">
+        <div class="page-header-title">
+          <h1>Products</h1>
+        </div>
+        <button
+          type="button"
+          class="btn btn-primary btn-add"
+          data-bs-toggle="modal"
+          data-bs-target="#add-product"
+        >
+          + Add Product
+        </button>
+      </div>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="add-product"
+        tabindex="-1"
+        aria-labelledby="addProductLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="addProductLabel">Add Product</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div class="modal-body">
+              <form id="product-form">
+                <div class="mb-3">
+                  <label for="productName" class="form-label"
+                    >Product Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="productName"
+                    placeholder="name"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="productPrice" class="form-label"
+                    >Product Price</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="productPrice"
+                    placeholder="price"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="productquantity" class="form-label"
+                    >Product Quantity</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="productquantity"
+                    placeholder="quantity"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="productminquantity" class="form-label"
+                    >Product min Quantity</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="productminquantity"
+                    placeholder="min_quantity"
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary" id="submit-btn">Add Product</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table-section">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Min Qty</th>
+              <th scope="col">Status</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="products-table-body">
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/products.js"></script>
+  </body>
+</html>
