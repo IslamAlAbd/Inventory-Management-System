@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 import express from "express";
+import cors from "cors";
 import connectDB from './src/config/db.js'
 import productRouter from './src/routes/productRoutes.js';
 import movementRouter from "./src/routes/movementRoutes.js";
@@ -12,6 +13,7 @@ connectDB();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 app.use("/api/products", productRouter);
 app.use("/api/movements", movementRouter);
