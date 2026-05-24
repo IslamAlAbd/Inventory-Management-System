@@ -14,6 +14,7 @@ export const getAllMovements = async (req, res) => {
 export const getMovById = async (req, res) => {
   const { id } = req.params;
   const result = await movService.getMovementsById(id);
+  //TODO 
 
   if (result.success) {
     res.status(200).json(result.data);
